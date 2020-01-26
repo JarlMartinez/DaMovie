@@ -1,0 +1,45 @@
+
+.movieCard {
+    transition: all .3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    padding: 0;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(255, 240, 212);
+    & img {
+        border-radius: 10px;
+        width: 100%;
+    }
+    & p {
+        font-weight: 900;
+        margin: 5px 0 0;
+        background-color: rgb(41, 41, 41);
+    }
+    & .movieCard__rate {
+        border-radius: 10px;
+        padding: 1px 8px;
+        background-color: rgb(250, 192, 0);
+        color: rgb(41, 41, 41);
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        & p {
+            display: inline;
+            background-color: transparent;
+        }
+    }
+    &:hover {
+        transform: scale(1.1);
+        z-index: 50;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .movieCard {
+        width: 170px;
+    }
+}

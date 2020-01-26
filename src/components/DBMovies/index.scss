@@ -1,0 +1,55 @@
+.moviesContainer {
+    background-color: rgb(41, 41, 41);
+    padding-top: 100px;
+}
+
+@media only screen and (max-width: 677px) {
+    .moviesContainer {
+        padding-top: 150px;
+    }
+}
+
+.colMovieCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divOfPages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 250px;
+    & .linkToPage {
+        cursor: pointer;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+        border-radius: 50%;
+        color: rgb(110, 110, 110);
+        border: 1px solid rgb(110, 110, 110);
+        background-color: rgb(41, 41, 41);
+        &:hover {
+            color: rgba(128, 255, 0, 0.6);
+            border: 1px solid rgba(128, 255, 0, 0.6);
+        }
+        &.currentPage {
+            color: rgba(128, 255, 0, 0.753);
+            border: 1px solid rgb(128, 255, 0);
+        }
+    }
+}
+
+.noMoviesLabelWrapper {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & h2 {
+        color: white;
+    }
+}

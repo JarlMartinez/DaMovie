@@ -1,0 +1,28 @@
+footer{
+    max-width: 2500px;
+    margin: 0 auto;
+    background-color: rgb(80, 80, 80);
+    & .footerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & img {
+            margin: 25px 7px;
+            max-width: 120px;
+        }
+        & p {
+            text-align: center;
+            color: wheat;
+            margin: 10px 0 20px;
+            font-size: 12px;
+        }
+    }
+}
+
+@media only screen and (max-width: 494px) {
+    footer {
+        & .footerContainer {
+            flex-direction: column;
+        }
+    }
+}

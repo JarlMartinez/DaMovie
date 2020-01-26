@@ -1,0 +1,51 @@
+{
+    "version": 2,
+    "name": "DaMovie",
+    "builds": [
+      {
+        "use": "@now/static-build",
+        "src": "package.json"
+      }
+    ],
+    "routes": [
+      {
+        "src": "(.*).js",
+        "dest": "/$1.js"
+  
+      },
+      {
+        "src": "(.*).json",
+        "dest": "/$1.json"
+  
+      },
+      {
+        "src": "(.*).png",
+        "dest": "/$1.png"
+  
+      },
+      {
+        "src": "(.*).jpg",
+        "dest": "/$1.jpg"
+  
+      },
+      {
+        "src": "(.*).gif",
+        "dest": "/$1.gif"
+  
+      },
+      {
+        "src": "(.*).svg",
+        "dest": "/$1.svg"
+  
+      },
+      {
+        "src": "(.*).css",
+        "dest": "/$1.css"
+  
+      },
+      {
+        "src": "/.*",
+        "dest": "/index.html"
+      }
+    ]
+  }
