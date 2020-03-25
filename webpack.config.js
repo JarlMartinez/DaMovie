@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const ImageMinPlugin = require('imagemin-webpack-plugin').default
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -65,12 +64,6 @@ module.exports = {
                 }
             ]
         }),
-        // Nota que imageMin plugin debe estar dsps de todos los plugins que trabajen con imagenes, yo lo pongo al final por combeniencia
-        new ImageMinPlugin({
-            pngquant: {
-                quality: '95-100'
-            }
-        })
     ],
     module: {
         rules: [

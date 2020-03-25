@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "DaMovie",
+  "name": "da-movie",
   "description": "Great movies reference",
   "icons": {
     "60": "/assets/firefox_app_60x60.png",

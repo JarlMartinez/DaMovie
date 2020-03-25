@@ -1,6 +1,6 @@
 {
-  "name": "DaMovie",
-  "short_name": "DaMovie",
+  "name": "da-movie",
+  "short_name": "da-movie",
   "description": "Great movies reference",
   "dir": "auto",
   "lang": "en-US",
