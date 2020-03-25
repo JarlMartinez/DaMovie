@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ImageMinPlugin = require('imagemin-webpack-plugin').default
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAsswtsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
@@ -36,6 +37,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template:  path.resolve(__dirname, 'src/index.html')
         }),
+        new FaviconsWebpackPlugin('./src/assets/icono-del-rollo-de-película.png'),
         new MiniCSSExtractPlugin({
             filename: 'styles/[name].[hash].css'
         }),

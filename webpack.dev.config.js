@@ -1,9 +1,11 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     mode: 'development',
     devServer: {
+        host: '10.0.0.4', //IP local
         port: 8242,
         open: false,
         hot: true,
@@ -18,7 +20,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        })
+        }),
+        new FaviconsWebpackPlugin('./src/assets/icono-del-rollo-de-película.png')
     ],
     module: {
         rules: [

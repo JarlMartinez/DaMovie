@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Carousel from 'react-bootstrap/Carousel'
-import {FaStar} from 'react-icons/fa'
+import {FaStar, FaShareAlt} from 'react-icons/fa'
 import {IoMdArrowRoundBack} from 'react-icons/io'
 
 import './styles/MovieInfo.scss'
@@ -99,19 +99,46 @@ const MovieInfo = (props) => {
         }
     }
 
+    const shareMovie = () => {
+        if (navigator.canShare) {
+            const movieToShare = movieData.data.title
+            const urlToShare = document.location.url
+            const infoToShare = {
+                title: `Gladiador`,
+                text: 'locoooo',
+                url: 'https://damovie.jarlmartinez.now.sh/98',
+              }
+            navigator.vibrate(200)
+            navigator.share(infoToShare)
+                .then(() => console.log(`La pelicula ${movieData.data.title} fue compartida`))
+                .catch(() => console.log(`Hubo un error compartiendo ${movieData.data.title}`))
+        } else {
+            alert('Tu browser no soporta la Web Share API')
+            return
+        }
+
+    }
+
     return(
         <>
         {movieData.data && movieData.trailer && movieData.similarMovies ?
 
             <Container className='movieInfo__page'>
-            {/* <span className='backwardsButton mr-3' onClick={() => {
-                }}>
-                <IoMdArrowRoundBack/>
-            </span> */}
-            <Link className='backwardsButton' to='/'>
-                <IoMdArrowRoundBack className='mr-2'/>
-                home
-            </Link>
+                <Row>
+                    <Col>
+                        <Link className='backwardsButton' to='/'>
+                            <IoMdArrowRoundBack className='mr-2'/>
+                            home
+                        </Link>
+                    </Col>
+                    <Col>
+                        <FaShareAlt
+                            size={'1.5em'}
+                            className='shareIcon'
+                            onClick={shareMovie}/>
+                    </Col>
+                </Row>
+
             <div className='background' style={{backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${movieData.data.backdrop_path})`}}>
             </div>
                 <h1>{movieData.data.title}</h1>
