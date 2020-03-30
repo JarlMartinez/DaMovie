@@ -131,12 +131,12 @@ const MovieInfo = (props) => {
                             home
                         </Link>
                     </Col>
-                    <Col>
+                    {/* <Col>
                         <FaShareAlt
                             size={'1.5em'}
                             className='shareIcon'
                             onClick={shareMovie}/>
-                    </Col>
+                    </Col> */}
                 </Row>
 
             <div className='background' style={{backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${movieData.data.backdrop_path})`}}>
