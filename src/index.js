@@ -6,7 +6,7 @@ import reduxThunk from 'redux-thunk'
 
 import App from './App'
 import reducers from './reducers'
-import initialState from './assets/initialState.js'
+import initialState from './initialState.js'
 
 const app = document.getElementById('app')
 const store = createStore(reducers, initialState, applyMiddleware(reduxThunk))

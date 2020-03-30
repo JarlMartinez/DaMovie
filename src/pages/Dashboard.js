@@ -34,19 +34,13 @@ const Dashboard = (props) => {
             bringGenres()
         }
         if(data.movies.categories.topRated.length === 0) {
-            for (var i = 1; i <= TOTAL_PAGES; i++) {
-                bringTopRated(i)
-            }
+            bringTopRated(TOTAL_PAGES)
         }
         if(data.movies.categories.nowPlaying.length === 0) {
-            for (var i = 1; i <= TOTAL_PAGES; i++) {
-                bringNowPlaying(i)
-            }
+            bringNowPlaying(TOTAL_PAGES)
         }
         if(data.movies.categories.upcoming.length === 0) {
-            for (var i = 1; i <= TOTAL_PAGES; i++) {
-                bringUpcoming(i)
-            }
+            bringUpcoming(TOTAL_PAGES)
         }
     }, [])
     
@@ -72,12 +66,10 @@ const Dashboard = (props) => {
     }
 
     const displayContent = () => {
-        if (loading) {
-            return <Loader />
-        }
-        if (error) {
-            return <h1>Error</h1>
-        }
+        if (loading) return <Loader />
+
+        if (error) return <h1>Error</h1>
+        
         return(
             <DBMovies
             selection={selection}

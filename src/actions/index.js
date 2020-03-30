@@ -20,62 +20,68 @@ export const bringGenres = () => async dispatch => {
         })
 }
 
-export const bringTopRated = (i) => async (dispatch) => {
+export const bringTopRated = (totalPages) => async (dispatch) => {
     dispatch({
         type: 'LOADING'
     })
-        await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=11ab3c1329a135a090a272ae94cc11ca&language=es&page=${i}`)
-        .then(response => {
+    try {
+        for(let i = 1; i <= totalPages; i++) {
+            const page1 = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=11ab3c1329a135a090a272ae94cc11ca&language=es&page=${i}`)
             dispatch({
                 type: 'BRING_TOP_RATED',
-                payload: response.data.results
+                payload: page1.data.results
             })
-        })
-        .catch(error => {
-            const theError = 'Error cargando Top-Rated: ' + error.message
-            dispatch({
-                type: 'ERROR',
-                payload: theError
-            })
+        }
+    } catch (err) {
+        const error = new Error('Error cargarndo Top Rated Movies' + err.message)
+        console.log(error)
+        dispatch({
+            type: 'ERROR',
+            payload: error
         })
     }
+}
     
-    export const bringNowPlaying = (i) => async dispatch => {
-        dispatch({
-            type: 'LOADING'
-        })
-        await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=11ab3c1329a135a090a272ae94cc11ca&language=es&page=${i}`)
-        .then(response => {
+export const bringNowPlaying = (totalPages) => async dispatch => {
+    dispatch({
+        type: 'LOADING'
+    })
+    try {
+        for(let i = 1; i <= totalPages; i++) {
+            const page1 = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=11ab3c1329a135a090a272ae94cc11ca&language=es&page=${i}`)
             dispatch({
                 type: 'BRING_NOW_PLAYING',
-                payload: response.data.results
+                payload: page1.data.results
             })
+        }
+    } catch (err) {
+        const error = new Error('Error cargarndo Top Rated Movies' + err.message)
+        console.log(error)
+        dispatch({
+            type: 'ERROR',
+            payload: error
         })
-        .catch(error => {
-            const theError = 'Error cargando Now-Playing: ' + error.message
-            dispatch({
-                type: 'ERROR',
-                payload: theError
-            })
-        })
+    }
 }
 
 export const bringUpcoming = (i) => async dispatch => {
     dispatch({
         type: 'LOADING'
     })
-        await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=11ab3c1329a135a090a272ae94cc11ca&language=es&page=${i}`)
-        .then(response => {
+    try {
+        for(let i = 1; i <= totalPages; i++) {
+            const page1 = await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=11ab3c1329a135a090a272ae94cc11ca&language=es&page=${i}`)
             dispatch({
                 type: 'BRING_UPCOMING',
-                payload: response.data.results
+                payload: page1.data.results
             })
+        }
+    } catch (err) {
+        const error = new Error('Error cargarndo Top Rated Movies' + err.message)
+        console.log(error)
+        dispatch({
+            type: 'ERROR',
+            payload: error
         })
-        .catch(error => {
-            const theError = 'Error cargando Upcoming: ' + error.message
-            dispatch({
-                type: 'ERROR',
-                payload: theError
-            })
-        })
+    }
 }
