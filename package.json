@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "now-build": "npm run prod",
-    "dev": "webpack-dev-server --https --config ./webpack.dev.config.js",
+    "start": "webpack-dev-server --https --config ./webpack.dev.config.js",
     "prod:start": "webpack --config ./webpack.config.js && npx serve dist -s",
     "prod": "webpack --config ./webpack.config.js",
     "dll": "webpack --config ./webpack.dll.config.js"
