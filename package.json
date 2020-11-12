@@ -29,7 +29,7 @@
     "file-loader": "5.0.2",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.8.0",
-    "node-sass": "4.14.1",
+    "node-sass": "5.0.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "sass-loader": "8.0.0",
     "style-loader": "1.0.1",
@@ -37,7 +37,7 @@
     "url-loader": "3.0.0",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10",
-    "webpack-dev-server": "3.9.0",
+    "webpack-dev-server": "3.11.0",
     "webpack-pwa-manifest": "4.1.1",
     "workbox-webpack-plugin": "4.3.1"
   },
