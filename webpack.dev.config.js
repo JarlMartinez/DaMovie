@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 module.exports = {
     mode: 'development',
     devServer: {
-        host: '10.0.0.4', //IP local
+        // host: '10.0.0.4', //IP local
         port: 8242,
         open: false,
         hot: true,
